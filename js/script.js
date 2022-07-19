@@ -1,7 +1,6 @@
 const listBook = [];
 const RENDER_EVENT = "render-todo";
 const STORAGE_KEY = "BOOK";
-const SAVED_EVENT = "saved-todo";
 
 document.addEventListener("DOMContentLoaded", () => {
   const submitForm = document.getElementById("submit-form");
@@ -288,7 +287,6 @@ function saveData() {
   if (isStorageExist()) {
     const parsed = JSON.stringify(listBook);
     localStorage.setItem(STORAGE_KEY, parsed);
-    document.dispatchEvent(new Event(SAVED_EVENT));
   }
 }
 
@@ -301,10 +299,6 @@ function findList(listId) {
   saveData();
   return null;
 }
-
-document.addEventListener(SAVED_EVENT, () => {
-  console.log("Work");
-});
 
 // fitur untuk mencari buku yang sudah ada
 const inputSearch = document.getElementById("input-search-judul");
