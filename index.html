@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rak Buku</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/d868047db3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header>
+      <h1><span class="rak-buku">📚</span>Rak Buku</h1>
+      <p id="copyright">Create by Bhakti Ramadhani</p>
+    </header>
+    <main>
+      <section class="input">
+        <h2 class="input-heading">
+          <span class="rak-buku">📖</span>Masukkan Buku Baru
+        </h2>
+        <form id="submit-form">
+          <div class="child">
+            <label for="input-judul">Judul</label>
+            <input id="input-judul" type="text" name="input-judul" required />
+          </div>
+          <div class="child">
+            <label for="input-penulis">Penulis</label>
+            <input
+              id="input-penulis"
+              type="text"
+              name="input-penulis"
+              required
+            />
+          </div>
+          <div class="child">
+            <label for="input-tahun">Tahun</label>
+            <input id="input-tahun" type="number" name="input-tahun" required />
+          </div>
+          <div class="child">
+            <label for="input-completed">Selesai Dibaca</label>
+            <input id="input-completed" type="checkbox" />
+          </div>
+          <button class="button-submit" type="submit">Simpan</button>
+        </form>
+      </section>
+      <section class="input">
+        <h2 class="input-heading">
+          <span class="search-book">🔎</span>Cari Buku
+        </h2>
+        <form id="form-input-search">
+          <div class="child">
+            <label for="search-judul">Judul</label>
+            <input id="input-search-judul" type="text" />
+          </div>
+        </form>
+      </section>
+      <section class="input">
+        <h2 class="input-heading">
+          <span class="not-checklist">❌</span>Belum selesai dibaca
+        </h2>
+        <div class="wrapper-item" id="list-not-completed"></div>
+      </section>
+      <section class="input">
+        <h2 class="input-heading">
+          <span class="checklist">✔</span> Sudah selesai dibaca
+        </h2>
+        <div class="wrapper-item" id="list-completed"></div>
+      </section>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background-size: cover;
+}
+
+/* header */
+header {
+  background-color: #1d5c63;
+  color: white;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+header > p#copyright {
+  font-size: 0.65em;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h1 span {
+  margin-right: 8px;
+}
+
+/* Main */
+main {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 100%;
+  margin: auto;
+  color: #1d5c63;
+  flex-direction: column;
+}
+
+main .input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main .input .input-heading {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 10px 0;
+  align-self: center;
+}
+
+section {
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #1d5c63;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+form .child {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+form .child label {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+form .child input {
+  padding: 5px;
+  border-radius: 5px;
+  border: rgba(29, 92, 99, 0.5) solid 2px;
+  transition: 0.2s;
+}
+
+form .child input:focus {
+  box-shadow: 0px 0px 10px rgba(29, 92, 99, 0.5);
+  outline: none;
+}
+
+form .child:nth-child(4) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+form .child:nth-child(4) label {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+form .child:nth-child(4) input {
+  margin-left: 8px;
+}
+
+form .button-submit {
+  width: 50%;
+  background-color: rgba(29, 92, 99, 1);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 8px;
+  align-self: center;
+  cursor: pointer;
+  font-size: 0.8em;
+  margin-top: 20px;
+  transition: 0.2s all;
+}
+
+form .button-submit:hover {
+  background-color: rgb(40, 123, 133);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#form-input-search .child {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#form-input-search .child label {
+  margin-right: 8px;
+}
+
+#form-input-search .child input {
+  width: 100%;
+}
+
+#form-input-search .child button {
+  width: 100px;
+  margin-left: 10px;
+  background-color: #1d5c63;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+#form-input-search .child button:hover {
+  background-color: rgb(40, 123, 133);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.checklist {
+  text-shadow: 0px 0px 5px rgba(40, 123, 133, 0.5);
+  margin-right: 3px;
+}
+
+.search-book,
+.not-checklist {
+  margin-right: 3px;
+  font-size: 0.85em;
+  text-shadow: 0px 0px 5px rgba(40, 123, 133, 0.5);
+}
+
+.rak-buku {
+  margin-right: 3px;
+}
+
+/* list */
+
+.wrapper-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.list-item {
+  margin: 10px 20px;
+  padding: 10px;
+  box-shadow: 0px 0px 4px #1d5c63;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item h2 {
+  font-size: 1.2em;
+}
+
+.list-item p {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.list-item .item-button {
+  /* width: 85px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list-item .item-button .check {
+  background: url(../assets/checked.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.list-item .item-button .check:hover {
+  background: url(../assets/checked-hover.png);
+  background-size: cover;
+}
+
+.list-item .item-button .trash {
+  background: url(../assets/trash.svg);
+  background-size: cover;
+  width: 35px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s all;
+  margin-left: 5px;
+}
+
+.list-item .item-button .trash:hover {
+  background: url(../assets/trash-hover.svg);
+  background-size: cover;
+}
+
+.list-item .item-button .undo {
+  background: url(../assets/undo.png);
+  background-size: cover;
+  width: 35px;
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.2s all;
+  margin-left: 5px;
+}
+
+.list-item .item-button .undo:hover {
+  background: url(../assets/undo-hover.png);
+  background-size: cover;
+}
+
+.list-item .item-button .edit {
+  background-color: #1d5c63;
+  color: #fff;
+  width: 40px;
+  height: 34px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.list-item .item-button .edit:hover {
+  background-color: #113f44;
+}
+
+@media (max-width: 520px) {
+  main {
+    width: 80%;
+  }
+}
