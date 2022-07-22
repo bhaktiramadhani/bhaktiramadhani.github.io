@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     // membuat list
     addBook();
-    alertNotification("success");
   });
 
   if (isStorageExist()) {
@@ -42,13 +41,13 @@ function alertNotification(event, bookId, bookJudul) {
           position: "center",
           icon: "info",
           title: "tunggu sebentar",
-          timer: 3000,
+          timer: 2000,
           timerProgressBar: true,
         });
         setTimeout(() => {
           Swal.fire("Terhapus", `${bookJudul} Telah Terhapus`, "success");
           removeBookFromCompleted(bookId);
-        }, 3000);
+        }, 2000);
       }
     });
   } else if (event === "edit") {
@@ -67,8 +66,8 @@ function alertNotification(event, bookId, bookJudul) {
     });
   }
 }
-
 function addBook() {
+  const form = document.getElementById("submit-form");
   const inputJudul = document.getElementById("input-judul");
   const inputPenulis = document.getElementById("input-penulis");
   const inputTahun = document.getElementById("input-tahun");
@@ -81,15 +80,30 @@ function addBook() {
     inputTahun.value,
     doneReading.checked
   );
-  listBook.push(makeObject);
-
-  document.dispatchEvent(new Event(RENDER_EVENT));
-
-  saveData();
-  inputJudul.value = "";
-  inputPenulis.value = "";
-  inputTahun.value = "";
-  doneReading.checked = false;
+  // for (let data of listBook) {
+  //   if (data.judul !== inputJudul.value) {
+  //     console.log("berhasil");
+  //     return;
+  //   } else {
+  //     Swal.fire("Buku ini sudah ada", "sudah ada", "warning");
+  //     return;
+  //   }
+  // }
+  for (let i = 0; i < listBook.length; i++) {
+    const data = listBook[i];
+    if (data.judul.toLowerCase() != inputJudul.value.toLowerCase()) {
+      console.log("berhasil");
+      listBook.push(makeObject);
+      saveData();
+      alertNotification("success");
+      document.dispatchEvent(new Event(RENDER_EVENT));
+      form.reset();
+      return;
+    } else {
+      Swal.fire("Buku ini sudah ada", "sudah ada", "warning");
+      return;
+    }
+  }
 }
 
 function generateRandomID() {
@@ -184,6 +198,7 @@ function makeBook(bookObject) {
     containerButton.append(editButton, checkButton, trashButton);
     container.append(containerButton);
   }
+
   return container;
 }
 
