@@ -283,4 +283,25 @@ form .button-submit:hover {
   main {
     width: 80%;
   }
+  main .input .input-heading {
+    font-size: 1.15em;
+  }
+  .list-item h2 {
+    font-size: 1.15em;
+  }
+  .list-item p {
+    font-size: 0.55em;
+  }
+}
+
+@media (max-width: 350px) {
+  main .input .input-heading {
+    font-size: 1em;
+  }
+  .list-item h2 {
+    font-size: 1em;
+  }
+  .list-item p {
+    font-size: 0.55em;
+  }
 }
