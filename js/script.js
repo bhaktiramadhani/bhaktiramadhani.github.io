@@ -80,30 +80,23 @@ function addBook() {
     inputTahun.value,
     doneReading.checked
   );
-  // for (let data of listBook) {
-  //   if (data.judul !== inputJudul.value) {
+
+  // for (let i = 0; i < listBook.length; i++) {
+  //   const data = listBook[i];
+  //   if (data.judul.toLowerCase() != inputJudul.value.toLowerCase()) {
   //     console.log("berhasil");
+
   //     return;
   //   } else {
   //     Swal.fire("Buku ini sudah ada", "sudah ada", "warning");
   //     return;
   //   }
   // }
-  for (let i = 0; i < listBook.length; i++) {
-    const data = listBook[i];
-    if (data.judul.toLowerCase() != inputJudul.value.toLowerCase()) {
-      console.log("berhasil");
-      listBook.push(makeObject);
-      saveData();
-      alertNotification("success");
-      document.dispatchEvent(new Event(RENDER_EVENT));
-      form.reset();
-      return;
-    } else {
-      Swal.fire("Buku ini sudah ada", "sudah ada", "warning");
-      return;
-    }
-  }
+  listBook.push(makeObject);
+  saveData();
+  alertNotification("success");
+  document.dispatchEvent(new Event(RENDER_EVENT));
+  form.reset();
 }
 
 function generateRandomID() {
